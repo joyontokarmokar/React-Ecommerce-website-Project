@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+/* Theme Vars */
+@theme {
+  --font-inter: "Inter", sans-serif;
+  --font-popins: "Poppins", sans-serif;
+}
+
+/* Container */
+.my-container {
+  @apply max-w-[1170px] mx-auto;
+}
+
+/* Base menu style */
+.nav_item {
+  @apply text-[16px] text-black font-normal leading-6 font-popins relative;
+}
+
+
+/* Underline effect */
+.nav_item::after {
+  content: "";
+  @apply absolute left-0 -bottom-1.25 h-0.5 w-0 bg-[rgba(0,0,0,0.25)] transition-all duration-300;
+}
+
+/* Hover underline */
+.nav_item:hover::after {
+  @apply w-full;
+}
+
+/* Hover text color */
+.nav_item:hover {
+  @apply text-[#DB4444];
+}
+.category a {
+  @apply text-[16px] text-black font-normal leading-6 font-popins;
+}
+/*============ Cart ========--*/
+@theme {
+  --shadow-Cart: 0 1px 13px rgba(0, 0, 0, 0.05); 
+}
+/*======== CheckOut Cutom Radio button =======*/
+.payment input[type="radio"]:checked + label span {
+  background: #000;
+  box-shadow: 0px 0px 0px 4px white inset;
+}
+/*======= PorductDetails Custom Radio Button======*/
+.color input[type="radio"]:checked + label span {
+  box-shadow: 0px 0px 0px 2px white inset;
+  border: 2px solid #000;
+}
+/*========== PorductDetails Size ========*/
+.size input[type="radio"]:checked + label span {
+  color: white;
+  background: #DB4444;
+  border: 1px solid #DB4444;
+}
+/*========= ExploreProduct Animation Add ===========*/
+.animate-show {
+  opacity: 1;
+  transform: scale(1);
+}
